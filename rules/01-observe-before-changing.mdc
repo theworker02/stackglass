@@ -1,0 +1,18 @@
+---
+description: Observe failures with Stackglass before editing code.
+alwaysApply: true
+---
+
+# Observe before changing
+
+Before fixing a failure:
+
+1. Inspect the failure (`test_failure_analyze` / `error_analyze`)
+2. Inspect source (`code_context`)
+3. Inspect related changes (`git_change_summary`)
+4. Inspect related tests (`test_plan`)
+5. Inspect history (`project_activity_timeline`, `git_history_context`)
+6. Form a hypothesis
+7. Then modify
+
+Do not randomly edit code until tests pass.

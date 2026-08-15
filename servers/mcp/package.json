@@ -1,0 +1,26 @@
+{
+  "name": "@stackglass/mcp",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Stackglass MCP server — 22 canonical tools for project observability and verification.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/bin.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.5",
+    "@stackglass/core": "1.1.0",
+    "zod": "^3.25.76"
+  }
+}

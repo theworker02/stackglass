@@ -1,0 +1,10 @@
+---
+description: Check README and docs against project reality after command or config changes.
+alwaysApply: true
+---
+
+# Documentation consistency
+
+After changing scripts, packages, ports, or commands, call `docs_check`.
+
+If the README documents a command that no longer exists, report a documentation mismatch.

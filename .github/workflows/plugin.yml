@@ -1,0 +1,21 @@
+name: Plugin
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+
+jobs:
+  plugin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run plugin:build
+      - run: test -f .cursor-plugin/plugin.json
+      - run: test ! -f .cursor-plugin/marketplace.json
+      - run: test -f dist/cursor-plugin/.cursor-plugin/plugin.json

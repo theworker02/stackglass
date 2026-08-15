@@ -1,0 +1,10 @@
+---
+description: Keep changes scoped to the hypothesis and related tests.
+alwaysApply: true
+---
+
+# Scope control
+
+Change only what the evidence supports. Do not refactor unrelated files while investigating a failure.
+
+If reproduction cannot be achieved, say so explicitly.

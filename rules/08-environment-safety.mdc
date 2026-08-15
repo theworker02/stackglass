@@ -1,0 +1,10 @@
+---
+description: Never expose environment secret values to agents.
+alwaysApply: true
+---
+
+# Environment safety
+
+Never return secret values. Use `env_usage` for names, locations, required, documented, example exists.
+
+Do not print `.env` contents. Do not log tokens, passwords, or connection strings.

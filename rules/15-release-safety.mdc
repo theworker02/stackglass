@@ -1,0 +1,10 @@
+---
+description: Never publish automatically. Use release_readiness instead.
+alwaysApply: true
+---
+
+# Release safety
+
+Never publish automatically.
+
+Stackglass may prepare a release via `release_readiness`. Publishing requires deliberate user action.

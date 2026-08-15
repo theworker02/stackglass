@@ -1,0 +1,10 @@
+---
+description: Check Stackglass-managed runtime status before assuming servers are up.
+alwaysApply: true
+---
+
+# Runtime awareness
+
+Call `runtime_status` and `runtime_logs` for processes launched or registered through Stackglass.
+
+Do not assume a dev server is running. Unavailable is a valid state.

@@ -1,0 +1,32 @@
+name: Bug Report
+description: Report a Stackglass defect
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction
+      description: Do not paste secrets or .env contents.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Stackglass version
+  - type: dropdown
+    id: os
+    attributes:
+      label: OS
+      options: [Windows, macOS, Linux]

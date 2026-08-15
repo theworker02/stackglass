@@ -1,0 +1,16 @@
+---
+description: Do not claim success when tests did not actually pass.
+alwaysApply: true
+---
+
+# No false pass
+
+Do not claim success when:
+
+- tests did not run
+- tests were skipped
+- build failed
+- runner crashed
+- coverage unavailable
+
+Distinguish: PASS, FAIL, SKIPPED, NOT RUN, UNAVAILABLE.

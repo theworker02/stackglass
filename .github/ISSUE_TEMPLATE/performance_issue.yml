@@ -1,0 +1,10 @@
+name: Performance Issue
+description: Indexing, watch, timeline, or MCP slowness
+labels: ["performance"]
+body:
+  - type: textarea
+    id: details
+    attributes:
+      label: What is slow, repository size, and measured times
+    validations:
+      required: true

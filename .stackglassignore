@@ -1,0 +1,10 @@
+node_modules
+target
+dist
+build
+coverage
+vendor
+.stackglass/cache
+.stackglass/history
+*.db
+.git

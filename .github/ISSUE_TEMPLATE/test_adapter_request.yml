@@ -1,0 +1,16 @@
+name: Test Adapter Request
+description: Request a GlassLab test adapter
+labels: ["adapter"]
+body:
+  - type: input
+    id: framework
+    attributes:
+      label: Framework
+    validations:
+      required: true
+  - type: textarea
+    id: detect
+    attributes:
+      label: How should Stackglass detect it?
+    validations:
+      required: true

@@ -1,0 +1,41 @@
+name: MCP Issue
+description: Bug or schema issue in the 22 MCP tools
+labels: ["mcp"]
+body:
+  - type: dropdown
+    id: tool
+    attributes:
+      label: Tool
+      options:
+        - project_snapshot
+        - project_activity_timeline
+        - code_context
+        - dependency_trace
+        - change_impact
+        - git_change_summary
+        - git_history_context
+        - runtime_status
+        - runtime_logs
+        - error_analyze
+        - error_trace
+        - test_discover
+        - test_plan
+        - test_run
+        - test_failure_analyze
+        - coverage_inspect
+        - mutation_test
+        - contract_verify
+        - config_audit
+        - env_usage
+        - docs_check
+        - release_readiness
+        - resources/prompts
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Include arguments and redacted output. No secrets.
+    validations:
+      required: true

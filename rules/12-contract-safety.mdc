@@ -1,0 +1,14 @@
+---
+description: Verify public contracts before changing exported behavior.
+alwaysApply: true
+---
+
+# Contract safety
+
+Before changing public behavior:
+
+1. capture current contract
+2. analyze the change
+3. compare (`contract_verify`)
+4. identify breakage
+5. verify intended behavior

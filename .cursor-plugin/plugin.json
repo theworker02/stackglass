@@ -1,0 +1,15 @@
+{
+  "name": "stackglass",
+  "displayName": "Stackglass",
+  "version": "1.1.0",
+  "description": "See what your project is actually doing. Observability and verification for Cursor: GlassLab, timeline, failures, and 22 MCP tools.",
+  "author": {
+    "name": "theworker02",
+    "email": "theworker02@users.noreply.github.com"
+  },
+  "homepage": "https://theworker02.github.io/stackglass/",
+  "repository": "https://github.com/theworker02/stackglass",
+  "license": "MIT",
+  "keywords": ["observability", "testing", "mcp", "debugging", "verification", "glasslab"],
+  "logo": "assets/logo.svg"
+}

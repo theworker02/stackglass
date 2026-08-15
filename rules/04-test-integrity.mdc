@@ -1,0 +1,18 @@
+---
+description: Never weaken tests merely to make the suite pass.
+alwaysApply: true
+---
+
+# Test integrity
+
+Never weaken tests merely to make the suite pass.
+
+Suspicious without justification:
+
+- removing assertions
+- loosening comparisons
+- skipping tests
+- increasing arbitrary timeouts
+- accepting snapshots blindly
+
+Require a reason in the change description.

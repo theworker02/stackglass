@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run format:check
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - run: node cli/dist/bin.js help
+      - run: npm run docs:build
+        env:
+          DOCS_BASE: /stackglass/
+      - run: npm run plugin:build
+      - name: Package GitHub artifacts
+        shell: bash
+        run: |
+          mkdir -p dist-release
+          (cd dist/cursor-plugin && zip -r ../../dist-release/stackglass-cursor-plugin.zip .)
+          (cd dist-release && sha256sum * > checksums.txt)
+      - uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: dist-release/*

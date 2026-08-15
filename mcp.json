@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "stackglass": {
+      "command": "node",
+      "args": ["${PLUGIN_ROOT}/scripts/stackglass-mcp.mjs"],
+      "env": {
+        "STACKGLASS_ROOT": "${workspaceFolder}"
+      }
+    }
+  }
+}

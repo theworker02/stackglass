@@ -1,0 +1,29 @@
+{
+  "history": {
+    "retentionDays": 30,
+    "maxEvents": 50000
+  },
+  "watch": {
+    "enabled": true,
+    "autoRun": false,
+    "debounceMs": 250
+  },
+  "index": {
+    "maxFileSizeBytes": 1048576,
+    "maxDepth": 24,
+    "parseSymbols": true
+  },
+  "lab": {
+    "defaultTimeoutMs": 120000,
+    "parallelWorkers": 4,
+    "flakeRepeatLimit": 25,
+    "mutationMaxMutants": 40
+  },
+  "telemetry": {
+    "enabled": false
+  },
+  "logging": {
+    "level": "info"
+  },
+  "ignore": []
+}

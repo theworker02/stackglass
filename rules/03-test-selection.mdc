@@ -1,0 +1,12 @@
+---
+description: Run the smallest meaningful verification first.
+alwaysApply: true
+---
+
+# Test selection
+
+Use the smallest meaningful verification first:
+
+related unit test → package tests → integration tests → full workspace
+
+Call `test_plan` then `test_run` with mode `related` or `changed` before `workspace`.

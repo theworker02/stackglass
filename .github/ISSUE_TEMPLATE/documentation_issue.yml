@@ -1,0 +1,10 @@
+name: Documentation Issue
+description: Docs or README inaccuracy
+labels: ["docs"]
+body:
+  - type: textarea
+    id: details
+    attributes:
+      label: What is wrong and where
+    validations:
+      required: true

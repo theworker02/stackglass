@@ -1,0 +1,10 @@
+---
+description: Treat returning failures as possible regressions with evidence.
+alwaysApply: true
+---
+
+# Regression awareness
+
+If an error previously disappeared and returns later, mark Possible regression.
+
+Provide: last seen, last resolved, relevant commits, changed files. Use `error_trace`.

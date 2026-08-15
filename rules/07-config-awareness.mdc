@@ -1,0 +1,13 @@
+---
+description: Inspect existing configuration before adding new systems.
+alwaysApply: true
+---
+
+# Configuration awareness
+
+Before introducing a new configuration system or environment variable:
+
+- inspect existing configuration (`config_audit`)
+- inspect naming conventions
+- inspect documentation
+- inspect deployment / CI usage

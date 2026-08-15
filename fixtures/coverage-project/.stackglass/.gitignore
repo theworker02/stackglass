@@ -1,0 +1,7 @@
+local.json
+cache/
+history/
+*.db
+*.db-wal
+*.db-shm
+logs/

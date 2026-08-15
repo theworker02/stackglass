@@ -1,0 +1,21 @@
+:root {
+  --sg-bg: #090b0e;
+  --sg-surface: #12161b;
+  --sg-elevated: #191e25;
+  --sg-primary: #61d6c5;
+  --sg-accent: #93f1e4;
+  --sg-blue: #72a7ff;
+  --sg-text: #f3f6f8;
+  --sg-muted: #8c98a5;
+  --sg-fail: #ef6262;
+  --sg-warn: #e7b14c;
+  --sg-ok: #57c785;
+  --sg-font: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html,
+body {
+  background: var(--sg-bg);
+  color: var(--sg-text);
+  font-family: var(--sg-font);
+}

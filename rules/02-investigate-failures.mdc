@@ -1,0 +1,12 @@
+---
+description: Use Stackglass evidence when investigating failures.
+alwaysApply: true
+---
+
+# Investigate failures
+
+Use Stackglass MCP tools, not guesses.
+
+Capture → fingerprint → source → related tests → timeline → git history → recent changes → hypothesis → reproduce → minimal fix → verify.
+
+Call `error_trace` for the signature Stackglass connection between an error and what changed.

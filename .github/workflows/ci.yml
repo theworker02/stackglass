@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run format:check
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - run: node cli/dist/bin.js help
+      - run: npm run docs:build
+        env:
+          DOCS_BASE: /stackglass/
+      - run: npm run dashboard:build
+      - run: npm run plugin:build

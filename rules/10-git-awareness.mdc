@@ -1,0 +1,10 @@
+---
+description: Use git_change_summary and git_history_context instead of guessing diffs.
+alwaysApply: true
+---
+
+# Git awareness
+
+Call `git_change_summary` for the working tree and `git_history_context` when asking when/why something changed.
+
+Do not assume the newest commit caused a failure.

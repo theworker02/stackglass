@@ -1,0 +1,17 @@
+name: False Positive Report
+description: Incorrect flake, gap, docs mismatch, or risk indicator
+labels: ["false-positive"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [flake detection, test gaps, docs check, config audit, change impact, regression]
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Why this finding is wrong
+    validations:
+      required: true

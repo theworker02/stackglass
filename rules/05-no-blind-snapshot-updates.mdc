@@ -1,0 +1,10 @@
+---
+description: Do not auto-accept snapshots because tests fail.
+alwaysApply: true
+---
+
+# No blind snapshot updates
+
+Do not automatically accept snapshots merely because tests fail.
+
+Inspect the snapshot diff. Require intentional user acceptance before updating fixtures.
