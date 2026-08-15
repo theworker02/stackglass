@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Track the coverage fixture so CI reads the real `coverage-summary.json` instead of `no_data`
+- Format files that failed Prettier in GitHub Actions
+
 ### Deprecated
 
 ### Removed

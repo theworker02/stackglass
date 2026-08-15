@@ -249,7 +249,7 @@ Permissions: local filesystem of the workspace only. Secrets are redacted.
 **Example arguments:**
 
 ```json
-{ "before": {"id": 1}, "after": {} }
+{ "before": { "id": 1 }, "after": {} }
 ```
 
 **Errors:** invalid arguments return `invalid_arguments` with Zod issues. Internal failures return `internal_failure`. Cancellation surfaces as a cancelled test/run status where applicable.

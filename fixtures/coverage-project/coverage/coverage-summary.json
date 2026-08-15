@@ -1,0 +1,14 @@
+{
+  "total": {
+    "lines": { "total": 100, "covered": 84, "skipped": 0, "pct": 84 },
+    "statements": { "total": 100, "covered": 84, "skipped": 0, "pct": 84 },
+    "functions": { "total": 10, "covered": 8, "skipped": 0, "pct": 80 },
+    "branches": { "total": 20, "covered": 15, "skipped": 0, "pct": 75 }
+  },
+  "src/app.js": {
+    "lines": { "total": 10, "covered": 9, "skipped": 0, "pct": 90 },
+    "statements": { "total": 10, "covered": 9, "skipped": 0, "pct": 90 },
+    "functions": { "total": 2, "covered": 2, "skipped": 0, "pct": 100 },
+    "branches": { "total": 4, "covered": 3, "skipped": 0, "pct": 75 }
+  }
+}
