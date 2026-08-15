@@ -28,12 +28,44 @@ jobs:
           DOCS_BASE: /stackglass/
       - run: npm run plugin:build
       - name: Package GitHub artifacts
-        shell: bash
-        run: |
-          mkdir -p dist-release
-          (cd dist/cursor-plugin && zip -r ../../dist-release/stackglass-cursor-plugin.zip .)
-          (cd dist-release && sha256sum * > checksums.txt)
+        run: node scripts/package-release.mjs
       - uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
-          files: dist-release/*
+          files: |
+            dist-release/stackglass-cli.zip
+            dist-release/stackglass-mcp.zip
+            dist-release/stackglass-cursor-plugin.zip
+            dist-release/checksums.txt
+          body: |
+            Stackglass 1.1.0 is a **GitHub Release**, not an npm package. Do not `npm install stackglass` or `npm link`.
+
+            Requires **Node.js >= 22.13.0**.
+
+            ## Artifacts
+
+            - `stackglass-cli.zip` — built CLI plus the MCP server and production dependencies
+            - `stackglass-mcp.zip` — same runtime; start with `node scripts/stackglass-mcp.mjs`
+            - `stackglass-cursor-plugin.zip` — Cursor Open Plugins layout
+            - `checksums.txt` — SHA-256 of the zips
+
+            ## CLI
+
+            ```bash
+            unzip stackglass-cli.zip -d stackglass
+            cd stackglass
+            node cli/dist/bin.js help
+            node scripts/glass.mjs init
+            ```
+
+            ## MCP (22 tools)
+
+            ```bash
+            STACKGLASS_ROOT=/path/to/your/project node scripts/stackglass-mcp.mjs
+            ```
+
+            ## Cursor plugin
+
+            Extract `stackglass-cursor-plugin.zip` and add that folder as a Cursor plugin. `mcp.json` starts `node scripts/stackglass-mcp.mjs`.
+
+            Docs: https://theworker02.github.io/stackglass/

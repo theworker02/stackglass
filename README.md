@@ -106,7 +106,7 @@ See [docs/architecture.md](docs/architecture.md). MCP, CLI, dashboard, and plugi
 
 ## Installation
 
-Requires Node.js 22.13+. Clone this repository and build it. Stackglass is not an npm package.
+Requires Node.js 22.13+. Stackglass is not an npm package. Download `stackglass-cli.zip` from [GitHub Releases](https://github.com/theworker02/stackglass/releases) or clone and build:
 
 ```bash
 git clone https://github.com/theworker02/stackglass.git
@@ -116,7 +116,7 @@ npm run build
 node cli/dist/bin.js --help
 ```
 
-From another project, point at that built checkout:
+From another project, point at the extracted release or built checkout:
 
 ```bash
 node /path/to/stackglass/cli/dist/bin.js init

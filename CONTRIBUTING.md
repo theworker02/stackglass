@@ -55,7 +55,7 @@ Use the pull request template. Small, focused changes. Do not commit `.env`, cre
 2. `npx glass release` against this repository (dogfood)
 3. Update CHANGELOG
 4. Tag `vX.Y.Z` and push the tag
-5. GitHub Actions `release.yml` attaches the Cursor plugin zip from `dist/cursor-plugin`. `docs.yml` deploys GitHub Pages.
+5. GitHub Actions `release.yml` attaches `stackglass-cli.zip`, `stackglass-mcp.zip`, `stackglass-cursor-plugin.zip`, and `checksums.txt`. `docs.yml` deploys GitHub Pages.
 
 The Cursor plugin files belong at the repository root. Do not add `.cursor-plugin/marketplace.json` unless this repo becomes a multi-plugin marketplace.
 

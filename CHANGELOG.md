@@ -11,13 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Cursor plugin uses the single-plugin Open Plugins layout at the repository root (`.cursor-plugin/plugin.json`) instead of a nested `apps/cursor-plugin` marketplace source
-- Removed npm package distribution (`bin` fields and `npm link`). CLI and MCP run from the built checkout via `node cli/dist/bin.js` and `node scripts/stackglass-mcp.mjs`
-
 ### Fixed
-
-- Track the coverage fixture so CI reads the real `coverage-summary.json` instead of `no_data`
-- Format files that failed Prettier in GitHub Actions
 
 ### Deprecated
 
@@ -45,6 +39,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Workspace packages are private. Stackglass is installed from GitHub, not the npm registry
 - Documentation deploys to GitHub Pages at https://theworker02.github.io/stackglass/
 - `apps/playground` is no longer an npm workspace package (demo lives in `examples/auth-api`)
+- Cursor plugin uses the single-plugin Open Plugins layout at the repository root (`.cursor-plugin/plugin.json`) instead of a nested `apps/cursor-plugin` marketplace source
+- Removed npm package distribution (`bin` fields and `npm link`). CLI and MCP run from the built checkout via `node cli/dist/bin.js` and `node scripts/stackglass-mcp.mjs`
+- GitHub Releases attach a runnable CLI/MCP zip, the Cursor plugin zip, and SHA-256 checksums
 
 ### Fixed
 
@@ -56,6 +53,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `glass` / `stackglass-mcp` binaries start the CLI and MCP server (they previously only re-exported libraries)
 - MCP honors `STACKGLASS_ROOT` so Cursor can point the server at the user workspace
 - Docs and plugin logos now sync from the same mark as `assets/`
+- Track the coverage fixture so CI reads the real `coverage-summary.json` instead of `no_data`
 
 ### Security
 
