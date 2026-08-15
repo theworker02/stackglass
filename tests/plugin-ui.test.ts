@@ -29,6 +29,14 @@ describe("plugin UI navigation contract", () => {
     const dash = readFileSync(path.join(root, "apps/dashboard/index.html"), "utf8");
     expect(docs).toContain('logo: "/logo.svg"');
     expect(home).toContain("src: /logo.svg");
+    expect(home).toContain("https://cursor.directory/plugins/stackglass");
     expect(dash).toContain('src="/logo.svg"');
+  });
+
+  it("README promotes the Cursor plugin listing", () => {
+    const readme = readFileSync(path.join(root, "README.md"), "utf8");
+    expect(readme).toContain("https://cursor.directory/plugins/stackglass");
+    expect(readme).toContain("node cli/dist/bin.js");
+    expect(readme).toContain("exactly 22 MCP tools");
   });
 });

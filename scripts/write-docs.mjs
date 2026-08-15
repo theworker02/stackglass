@@ -4,7 +4,14 @@ import path from "node:path";
 
 const root = path.join(process.cwd(), "apps/docs");
 
+// Hand-crafted landing lives in apps/docs/index.md plus .vitepress/theme.
+// Never write index.md from this generator — docs:build must keep the custom home.
+const HAND_CRAFTED = new Set(["index.md"]);
+
 function page(rel, title, body) {
+  if (HAND_CRAFTED.has(rel) || rel === "index.md") {
+    throw new Error(`refusing to overwrite hand-crafted page: ${rel}`);
+  }
   const abs = path.join(root, rel);
   mkdirSync(path.dirname(abs), { recursive: true });
   writeFileSync(abs, `# ${title}\n\n${body.trim()}\n`, "utf8");
@@ -17,13 +24,33 @@ page(
 
 It is **not** an AI that writes code. Cursor already provides the coding agent. Stackglass gives that agent evidence about project state, tests, failures, history, configuration, contracts, and documentation.
 
-The defining principle: **give coding agents evidence instead of forcing them to guess.**`,
+The defining principle: **give coding agents evidence instead of forcing them to guess.**
+
+Install the Cursor plugin: [https://cursor.directory/plugins/stackglass](https://cursor.directory/plugins/stackglass)
+
+## What it is
+
+A flight recorder, testing laboratory (GlassLab), change inspector, MCP server with **exactly 22 tools**, Cursor plugin, GlassLens, and a local dashboard. Version **1.1.0**.
+
+## What it is not
+
+Not a coding assistant. Not an npm package (\`bin\`, \`npm link\`, and \`npm publish\` are not part of this project). Not a 23rd MCP tool. Not a cloud that uploads source. \`release_readiness\` never publishes.
+
+Missing data is reported as \`no_data\`, \`unavailable\`, or \`not_configured\`. Stackglass will not invent coverage or test results.`,
 );
 
 page(
   "getting-started/installation.md",
   "Installation",
-  `Requires Node.js 22.13 or later. Stackglass is not an npm package.
+  `Requires **Node.js 22.13** or later. Stackglass is **not** an npm package. Do not \`npm install -g stackglass\`, \`npm link\`, or \`npx stackglass\`.
+
+## Cursor plugin
+
+Install from [https://cursor.directory/plugins/stackglass](https://cursor.directory/plugins/stackglass).
+
+That listing is the install CTA for the repository. You can also extract \`stackglass-cursor-plugin.zip\` from [GitHub Release v1.1.0](https://github.com/theworker02/stackglass/releases/tag/v1.1.0) and add the folder as an Open Plugin.
+
+## Clone and build
 
 \`\`\`bash
 git clone https://github.com/theworker02/stackglass.git
@@ -33,7 +60,22 @@ npm run build
 node cli/dist/bin.js --help
 \`\`\`
 
-From another project: \`node /path/to/stackglass/cli/dist/bin.js init\`.`,
+From another project: \`node /path/to/stackglass/cli/dist/bin.js init\`.
+
+There is no global \`glass\` binary from npm. Use \`node cli/dist/bin.js\` or \`node scripts/glass.mjs\`.
+
+## Release zips
+
+Download from [v1.1.0](https://github.com/theworker02/stackglass/releases/tag/v1.1.0):
+
+- \`stackglass-cli.zip\` — \`node cli/dist/bin.js help\`
+- \`stackglass-mcp.zip\` — \`STACKGLASS_ROOT=/your/project node scripts/stackglass-mcp.mjs\`
+- \`stackglass-cursor-plugin.zip\` — Cursor Open Plugins layout
+- \`checksums.txt\` — SHA-256 of the zips
+
+Verify hashes before you run an extracted tree. Full artifact instructions: [docs/RELEASE.md](https://github.com/theworker02/stackglass/blob/master/docs/RELEASE.md).
+
+\`STACKGLASS_ROOT\` is the workspace to observe. If you launch the CLI or MCP from the Stackglass checkout, set it to the user project.`,
 );
 
 page(
@@ -53,16 +95,37 @@ glass dashboard
 page(
   "getting-started/cursor-setup.md",
   "Cursor Setup",
-  `Stackglass integrates with Cursor through the official plugin format:
+  `Install the plugin from [https://cursor.directory/plugins/stackglass](https://cursor.directory/plugins/stackglass).
 
-- MCP server \`stackglass-mcp\` (22 tools, resources, prompts)
+Stackglass integrates with Cursor through the official Open Plugins layout at the **repository root**:
+
+- MCP server \`stackglass\` — \`node scripts/stackglass-mcp.mjs\`, 22 tools, resources, prompts
 - Rules in \`rules/\`
 - Skills in \`skills/\`
-- Commands and agents in the plugin package
+- Agents in \`agents/\`
+- Commands in \`commands/\`
+- Hooks in \`hooks/\`
+- \`mcp.json\` sets \`STACKGLASS_ROOT\` to the current workspace
 
-The plugin lives at the repository root (\`.cursor-plugin/plugin.json\`, \`mcp.json\`, \`rules/\`, \`skills/\`, \`agents/\`, \`commands/\`, \`hooks/\`). Install it from this repo in Cursor, then run \`glass init\` in the project so the agent has a database and index.
+\`\`\`text
+.cursor-plugin/plugin.json
+mcp.json
+rules/
+skills/
+agents/
+commands/
+hooks/
+scripts/stackglass-mcp.mjs
+\`\`\`
 
-The dashboard is \`glass dashboard\` (127.0.0.1). Cursor plugins do not expose a custom sidebar API; the local dashboard and MCP resources provide the UI and evidence surface.`,
+After the plugin is available:
+
+1. Clone this repository (or extract \`stackglass-cli.zip\`) and, for a source checkout, run \`npm install\` then \`npm run build\`.
+2. In the project you want to observe: \`node /path/to/stackglass/cli/dist/bin.js init\`.
+3. Confirm MCP server \`stackglass\` is listed in Cursor.
+4. Open the UI with \`node /path/to/stackglass/cli/dist/bin.js dashboard\` (127.0.0.1).
+
+Cursor plugins do not expose a custom sidebar API. The local dashboard and MCP resources are the evidence surface. Do not add \`.cursor-plugin/marketplace.json\` unless this repository becomes a multi-plugin marketplace.`,
 );
 
 page(
@@ -194,17 +257,29 @@ Insufficient history is not presented as a confident statistic.`,
 page(
   "mcp/setup.md",
   "MCP Setup",
-  `Start the MCP server with \`node scripts/stackglass-mcp.mjs\` after cloning this repository and running \`npm install && npm run build\`.
+  `The Cursor plugin at [https://cursor.directory/plugins/stackglass](https://cursor.directory/plugins/stackglass) starts the server for you.
 
-Set \`STACKGLASS_ROOT\` to the user workspace. Cursor plugin \`mcp.json\` does this automatically.`,
+To run it yourself, clone this repository, \`npm install && npm run build\`, then:
+
+\`\`\`bash
+STACKGLASS_ROOT=/path/to/your/project node scripts/stackglass-mcp.mjs
+\`\`\`
+
+Equivalent: \`node servers/mcp/dist/bin.js\` or \`node cli/dist/bin.js mcp\`.
+
+From a GitHub Release, extract \`stackglass-mcp.zip\` (same tree as \`stackglass-cli.zip\`) and use the same command. Set \`STACKGLASS_ROOT\` to the user workspace. Cursor plugin \`mcp.json\` does this automatically.
+
+The public surface is **exactly 22 tools**. See [Tools](/mcp/tools) and [tool reference](/mcp/tools-reference).`,
 );
 
 page(
   "mcp/tools.md",
   "MCP Tools",
-  `Stackglass exposes **exactly 22** canonical tools. Do not add dozens of tiny tools.
+  `Stackglass exposes **exactly 22** canonical tools. Do not add dozens of tiny tools. New capability is an optional argument or an MCP resource, never a 23rd tool.
 
-See [MCP tool reference](/mcp/tools-reference) for schemas, examples, errors, and security notes for each tool.`,
+See [MCP tool reference](/mcp/tools-reference) for schemas, examples, errors, and security notes for each tool.
+
+Install the Cursor plugin: [https://cursor.directory/plugins/stackglass](https://cursor.directory/plugins/stackglass).`,
 );
 
 const tools = [
@@ -343,7 +418,20 @@ page(
 page(
   "tools/releases.md",
   "Releases",
-  "`release_readiness` never publishes. It reports git, tests, docs, config, changelog, and version checks.",
+  `\`release_readiness\` / \`glass release\` never publishes. It reports git, tests, docs, config, changelog, and version checks.
+
+Stackglass itself is distributed as GitHub Release zips, not npm. Current release: [v1.1.0](https://github.com/theworker02/stackglass/releases/tag/v1.1.0).
+
+| Artifact | Use |
+| --- | --- |
+| \`stackglass-cli.zip\` | \`node cli/dist/bin.js help\` |
+| \`stackglass-mcp.zip\` | \`STACKGLASS_ROOT=/project node scripts/stackglass-mcp.mjs\` |
+| \`stackglass-cursor-plugin.zip\` | Cursor Open Plugins folder |
+| \`checksums.txt\` | SHA-256 of the three zips |
+
+Cursor plugin listing: [https://cursor.directory/plugins/stackglass](https://cursor.directory/plugins/stackglass).
+
+Full instructions: [docs/RELEASE.md](https://github.com/theworker02/stackglass/blob/master/docs/RELEASE.md).`,
 );
 
 page(
@@ -380,7 +468,11 @@ page(
 page(
   "reference/cli.md",
   "CLI",
-  "Binary: `glass` (fallback `stackglass`). See the README CLI tree. `glass mcp` starts the MCP server on stdio. `glass doctor bundle` writes a sanitized support archive without source or secrets.",
+  `There is no npm \`bin\`. The entry point is \`node cli/dist/bin.js\` (or \`node scripts/glass.mjs\` from a release zip). If you create a local alias named \`glass\` or \`stackglass\`, the command tree is the same.
+
+See the [README CLI catalog](https://github.com/theworker02/stackglass#cli-catalog). \`glass mcp\` starts the MCP server on stdio. \`glass doctor bundle\` writes a sanitized support archive without source or secrets. \`glass dashboard\` binds 127.0.0.1.
+
+Release zips: [v1.1.0](https://github.com/theworker02/stackglass/releases/tag/v1.1.0). Artifact usage: [docs/RELEASE.md](https://github.com/theworker02/stackglass/blob/master/docs/RELEASE.md).`,
 );
 page(
   "reference/configuration.md",
@@ -404,13 +496,31 @@ The MCP server and CLI use the same core.`,
 page(
   "reference/troubleshooting.md",
   "Troubleshooting",
-  `Run \`glass doctor\`.
+  `Run \`node cli/dist/bin.js doctor\` in the **user workspace**.
 
-Common states: database not initialized (\`glass init\`), coverage \`no_data\` (no provider artifact), tests \`unavailable\` (no adapter detected), git \`unavailable\` (not a repository).`,
+| Symptom | Likely cause | What to do |
+| --- | --- | --- |
+| Database not initialized | No \`.stackglass/\` | \`node …/cli/dist/bin.js init\` |
+| Coverage \`no_data\` | No provider artifact | Run the framework coverage reporter first |
+| Tests \`unavailable\` | No adapter evidence | Confirm a known framework config exists |
+| Git \`unavailable\` | Not a repository | Run inside a git checkout |
+| MCP missing in Cursor | Plugin path or Node version | Reinstall from [cursor.directory/plugins/stackglass](https://cursor.directory/plugins/stackglass); Node >= 22.13 |
+| MCP observes the wrong tree | \`STACKGLASS_ROOT\` unset | Point it at the user workspace |
+| \`glass\` not found | Not an npm binary | Use \`node cli/dist/bin.js\` |
+
+Secrets must never appear in MCP, logs, or doctor bundles. Report redaction failures privately via GitHub Security Advisories.`,
 );
 
 const brand = spawnSync(process.execPath, [path.join(process.cwd(), "scripts/sync-brand.mjs")], {
   stdio: "inherit",
 });
 if (brand.status) process.exit(brand.status);
+
+const prettier = spawnSync(
+  process.platform === "win32" ? "npx.cmd" : "npx",
+  ["prettier", "--write", "apps/docs/**/*.md"],
+  { stdio: "inherit", shell: process.platform === "win32" },
+);
+if (prettier.status) process.exit(prettier.status);
+
 console.log("docs pages written");

@@ -5,7 +5,8 @@ const site = "https://theworker02.github.io/stackglass/";
 
 export default defineConfig({
   title: "Stackglass",
-  description: "See what your project is actually doing.",
+  description:
+    "Local-first observability and verification for Cursor. Evidence for agents — not another coding assistant.",
   base,
   lang: "en-US",
   lastUpdated: true,
@@ -18,7 +19,8 @@ export default defineConfig({
       "meta",
       {
         property: "og:description",
-        content: "See what your project is actually doing.",
+        content:
+          "Local-first observability and verification for Cursor. Evidence for agents — not another coding assistant.",
       },
     ],
     ["meta", { property: "og:image", content: `${site}og.svg` }],
@@ -32,6 +34,7 @@ export default defineConfig({
       { text: "GlassLab", link: "/glasslab/overview" },
       { text: "MCP", link: "/mcp/setup" },
       { text: "CLI", link: "/reference/cli" },
+      { text: "Plugin", link: "https://cursor.directory/plugins/stackglass" },
       { text: "GitHub", link: "https://github.com/theworker02/stackglass" },
     ],
     search: { provider: "local" },
@@ -114,8 +117,9 @@ export default defineConfig({
     ],
     socialLinks: [{ icon: "github", link: "https://github.com/theworker02/stackglass" }],
     footer: {
-      message: "Local-first developer observability. Distributed from GitHub, not npm.",
-      copyright: "MIT License",
+      message:
+        'Local-first developer observability. Distributed from GitHub, not npm. <a href="https://cursor.directory/plugins/stackglass">Install the Cursor plugin</a>.',
+      copyright: "MIT License · Stackglass 1.1.0",
     },
   },
 });

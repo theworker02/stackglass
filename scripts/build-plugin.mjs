@@ -59,10 +59,11 @@ scripts/stackglass-mcp.mjs
 assets/logo.svg
 \`\`\`
 
-Clone this repository, run \`npm install\` and \`npm run build\`, then
-\`node cli/dist/bin.js init\` in the target workspace. \`mcp.json\` starts
-\`node \${PLUGIN_ROOT}/scripts/stackglass-mcp.mjs\` and sets \`STACKGLASS_ROOT\`
-to the current workspace.
+Install from https://cursor.directory/plugins/stackglass when you want the
+published listing. Otherwise clone this repository, run \`npm install\` and
+\`npm run build\`, then \`node cli/dist/bin.js init\` in the target workspace.
+\`mcp.json\` starts \`node \${PLUGIN_ROOT}/scripts/stackglass-mcp.mjs\` and sets
+\`STACKGLASS_ROOT\` to the current workspace.
 `,
 );
 

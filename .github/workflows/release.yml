@@ -38,16 +38,22 @@ jobs:
             dist-release/stackglass-cursor-plugin.zip
             dist-release/checksums.txt
           body: |
-            Stackglass 1.1.0 is a **GitHub Release**, not an npm package. Do not `npm install stackglass` or `npm link`.
+            Stackglass is a **GitHub Release**, not an npm package. Do not `npm install stackglass`, `npm link`, or `npm publish`.
 
             Requires **Node.js >= 22.13.0**.
 
+            Cursor plugin: https://cursor.directory/plugins/stackglass
+
+            Full artifact instructions: https://github.com/theworker02/stackglass/blob/master/docs/RELEASE.md
+
             ## Artifacts
 
-            - `stackglass-cli.zip` — built CLI plus the MCP server and production dependencies
-            - `stackglass-mcp.zip` — same runtime; start with `node scripts/stackglass-mcp.mjs`
-            - `stackglass-cursor-plugin.zip` — Cursor Open Plugins layout
-            - `checksums.txt` — SHA-256 of the zips
+            - `stackglass-cli.zip` — built CLI plus the MCP server and production dependencies. Run `node cli/dist/bin.js help`.
+            - `stackglass-mcp.zip` — same runtime tree as the CLI zip. Start with `STACKGLASS_ROOT=/your/project node scripts/stackglass-mcp.mjs`.
+            - `stackglass-cursor-plugin.zip` — Cursor Open Plugins layout (`.cursor-plugin/plugin.json`). Prefer the cursor.directory listing when you can.
+            - `checksums.txt` — SHA-256 of the three zips. Verify before you run an extracted tree.
+
+            The CLI zip and MCP zip are the same runnable tree. The plugin zip is a different layout and does not include `cli/dist`.
 
             ## CLI
 
@@ -58,14 +64,20 @@ jobs:
             node scripts/glass.mjs init
             ```
 
-            ## MCP (22 tools)
+            If `node_modules` is missing: `npm install --omit=dev --ignore-scripts` inside the extracted tree only.
+
+            ## MCP (exactly 22 tools)
 
             ```bash
             STACKGLASS_ROOT=/path/to/your/project node scripts/stackglass-mcp.mjs
             ```
 
+            `STACKGLASS_ROOT` is the workspace to observe. New capability is an optional argument, never a 23rd tool.
+
             ## Cursor plugin
 
-            Extract `stackglass-cursor-plugin.zip` and add that folder as a Cursor plugin. `mcp.json` starts `node scripts/stackglass-mcp.mjs`.
+            Install from https://cursor.directory/plugins/stackglass or extract `stackglass-cursor-plugin.zip` and add that folder as a Cursor plugin. `mcp.json` starts `node scripts/stackglass-mcp.mjs` and sets `STACKGLASS_ROOT` to the workspace.
+
+            You still need the CLI zip or a built clone to run `init`, `status`, and `dashboard`.
 
             Docs: https://theworker02.github.io/stackglass/

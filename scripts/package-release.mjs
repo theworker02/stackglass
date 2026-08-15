@@ -121,7 +121,13 @@ On macOS/Linux: \`STACKGLASS_ROOT=/path/to/your/project node scripts/stackglass-
 
 ## Cursor plugin
 
-Use \`stackglass-cursor-plugin.zip\` from the same GitHub Release. That zip is the Open Plugins layout (\`.cursor-plugin/plugin.json\`, \`mcp.json\`, rules, skills, agents, commands, hooks).
+Prefer https://cursor.directory/plugins/stackglass
+
+Or use \`stackglass-cursor-plugin.zip\` from the same GitHub Release. That zip is the Open Plugins layout (\`.cursor-plugin/plugin.json\`, \`mcp.json\`, rules, skills, agents, commands, hooks).
+
+## Checksums
+
+Verify SHA-256 lines in \`checksums.txt\` before you run an extracted tree. See https://github.com/theworker02/stackglass/blob/master/docs/RELEASE.md
 
 Docs: https://theworker02.github.io/stackglass/
 `,

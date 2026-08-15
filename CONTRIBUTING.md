@@ -45,17 +45,24 @@ The public MCP surface is 22 tools. Prefer new arguments or UI/CLI commands over
 
 Docs are VitePress in `apps/docs`. Keep README commands accurate. Update CHANGELOG for user-facing changes.
 
+The homepage (`apps/docs/index.md` plus `.vitepress/theme`) is hand-crafted. `scripts/write-docs.mjs` must not write `index.md`. After regenerating inner pages, run `DOCS_BASE=/stackglass/ npm run docs:build`.
+
+The Cursor plugin listing to link from README and the site is https://cursor.directory/plugins/stackglass.
+
 ## Pull requests
 
 Use the pull request template. Small, focused changes. Do not commit `.env`, credentials, or `.stackglass/local.json`.
 
 ## Release process
 
+Follow [docs/RELEASE.md](docs/RELEASE.md). Short version:
+
 1. `npm test` and `npm run build`
-2. `npx glass release` against this repository (dogfood)
-3. Update CHANGELOG
-4. Tag `vX.Y.Z` and push the tag
+2. `node cli/dist/bin.js release` against this repository (dogfood). Never `npx glass` from npm.
+3. Update CHANGELOG and `docs/RELEASE.md` if artifact usage changed
+4. Tag `vX.Y.Z` and push the tag. `master` is protected: require a pull request, no force-push.
 5. GitHub Actions `release.yml` attaches `stackglass-cli.zip`, `stackglass-mcp.zip`, `stackglass-cursor-plugin.zip`, and `checksums.txt`. `docs.yml` deploys GitHub Pages.
+6. Expand the published release body so it matches `docs/RELEASE.md` (`gh release edit vX.Y.Z --notes-file docs/RELEASE.md`).
 
 The Cursor plugin files belong at the repository root. Do not add `.cursor-plugin/marketplace.json` unless this repo becomes a multi-plugin marketplace.
 

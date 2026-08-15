@@ -9,7 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Documentation site landing with glass/stacked-pane theme, Cursor plugin CTA, and sections for the 22 tools, GlassLab, GlassLens, dashboard, privacy, and install
+- In-repo [docs/RELEASE.md](docs/RELEASE.md) covering each GitHub Release zip, checksums, and plugin vs CLI vs MCP
+- README install CTA for the Cursor plugin at https://cursor.directory/plugins/stackglass
+
 ### Changed
+
+- README, getting-started docs, troubleshooting, and published v1.1.0 release notes expanded with source install, `STACKGLASS_ROOT`, and artifact usage
+- `scripts/write-docs.mjs` refuses to overwrite the hand-crafted `apps/docs/index.md`
 
 ### Fixed
 
