@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
   <img src="assets/stackglass-horizontal.svg" alt="Stackglass" width="420"/>
 </p>
 
@@ -11,7 +11,7 @@
 <p align="center">
   <a href="https://github.com/theworker02/stackglass/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/theworker02/stackglass/actions/workflows/ci.yml/badge.svg"></a>
   <a href="https://github.com/theworker02/stackglass/releases"><img alt="Release" src="https://img.shields.io/github/v/release/theworker02/stackglass?label=release"></a>
-  <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-61D6C5"></a>
+  <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-Proprietary%20(source--available)-61D6C5"></a>
   <a href="https://github.com/theworker02/stackglass/actions/workflows/test.yml"><img alt="Tests" src="https://github.com/theworker02/stackglass/actions/workflows/test.yml/badge.svg"></a>
   <a href="apps/docs/mcp/tools.md"><img alt="MCP" src="https://img.shields.io/badge/MCP-22%20tools-72A7FF"></a>
   <a href="https://theworker02.github.io/stackglass/"><img alt="Documentation" src="https://img.shields.io/badge/docs-github%20pages-93F1E4"></a>
@@ -19,7 +19,7 @@
 
 Stackglass is the **observability and verification layer for AI-assisted development**.
 
-Cursor writes and reasons about code. Stackglass gives that agent evidence about state, tests, failures, history, configuration, contracts, and documentation — so it does not have to guess.
+Cursor writes and reasons about code. Stackglass gives that agent evidence about state, tests, failures, history, configuration, contracts, and documentation â€” so it does not have to guess.
 
 It is not another coding assistant.
 
@@ -45,7 +45,7 @@ Agents constantly struggle with questions like: what changed, what is broken, wh
 Stackglass connects those events. Example:
 
 ```text
-token.ts edited → typecheck fails → two auth tests fail → contract drifts → README example goes stale
+token.ts edited â†’ typecheck fails â†’ two auth tests fail â†’ contract drifts â†’ README example goes stale
 ```
 
 Ask Cursor _what happened?_ and Stackglass answers with evidence.
@@ -274,4 +274,5 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.
 
 ## License
 
-[MIT](LICENSE)
+**Source-available proprietary** — evaluation under [LICENSE](./LICENSE); commercial / production use via [COMMERCIAL.md](./COMMERCIAL.md). See [LICENSE_TRANSITION_NOTICE.md](./LICENSE_TRANSITION_NOTICE.md) and [NOTICE](./NOTICE).
+

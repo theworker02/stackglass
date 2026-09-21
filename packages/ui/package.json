@@ -1,13 +1,13 @@
-{
-  "name": "@stackglass/ui",
-  "version": "1.1.0",
-  "private": true,
-  "description": "Stackglass design tokens for dashboard and documentation.",
-  "license": "MIT",
-  "exports": {
-    "./tokens.css": "./tokens.css"
-  },
-  "scripts": {
-    "build": "node -e \"process.exit(0)\""
-  }
+﻿{
+    "name":  "@stackglass/ui",
+    "version":  "1.1.0",
+    "private":  true,
+    "description":  "Stackglass design tokens for dashboard and documentation.",
+    "license":  "SEE LICENSE IN LICENSE",
+    "exports":  {
+                    "./tokens.css":  "./tokens.css"
+                },
+    "scripts":  {
+                    "build":  "node -e \"process.exit(0)\""
+                }
 }
