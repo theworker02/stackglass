@@ -19,7 +19,7 @@
 
 Stackglass is the **observability and verification layer for AI-assisted development**.
 
-Cursor writes and reasons about code. Stackglass gives that agent evidence about state, tests, failures, history, configuration, contracts, and documentation â€” so it does not have to guess.
+Cursor writes and reasons about code. Stackglass gives that agent evidence about state, tests, failures, history, configuration, contracts, and documentation Ã¢â‚¬â€ so it does not have to guess.
 
 It is not another coding assistant.
 
@@ -45,7 +45,7 @@ Agents constantly struggle with questions like: what changed, what is broken, wh
 Stackglass connects those events. Example:
 
 ```text
-token.ts edited â†’ typecheck fails â†’ two auth tests fail â†’ contract drifts â†’ README example goes stale
+token.ts edited Ã¢â€ â€™ typecheck fails Ã¢â€ â€™ two auth tests fail Ã¢â€ â€™ contract drifts Ã¢â€ â€™ README example goes stale
 ```
 
 Ask Cursor _what happened?_ and Stackglass answers with evidence.
@@ -274,7 +274,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.
 
 ## License
 
-**Source-available proprietary** — evaluation under [LICENSE](./LICENSE); commercial / production use via [COMMERCIAL.md](./COMMERCIAL.md). See [LICENSE_TRANSITION_NOTICE.md](./LICENSE_TRANSITION_NOTICE.md) and [NOTICE](./NOTICE).
+**Source-available proprietary** â€” evaluation under [LICENSE](./LICENSE); commercial / production use via [COMMERCIAL.md](./COMMERCIAL.md). See [LICENSE_TRANSITION_NOTICE.md](./LICENSE_TRANSITION_NOTICE.md) and [NOTICE](./NOTICE).
 
 
 ---
@@ -282,3 +282,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.
 ## License & acquisition
 
 This project is **proprietary**. Production use, redistribution, and commercial deployment require a written commercial license or completed acquisition. See [LICENSE](./LICENSE) and [ACQUISITION.md](./ACQUISITION.md). Contact [@theworker02](https://github.com/theworker02).
+
+## Acquisition diligence
+
+Buyer-facing diligence materials live in [docs/acquisition/](./docs/acquisition/). Commercial licensing contact path: [COMMERCIAL.md](./COMMERCIAL.md).
