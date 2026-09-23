@@ -1,24 +1,24 @@
 {
-    "name":  "@stackglass/cli",
-    "version":  "1.1.0",
-    "private":  true,
-    "description":  "glass / stackglass CLI â€” project observability, GlassLab, and MCP control.",
-    "license":  "SEE LICENSE IN LICENSE",
-    "type":  "module",
-    "engines":  {
-                    "node":  "\u003e=22.13.0"
-                },
-    "exports":  {
-                    ".":  {
-                              "types":  "./dist/index.d.ts",
-                              "import":  "./dist/index.js"
-                          }
-                },
-    "scripts":  {
-                    "build":  "tsc -p tsconfig.json"
-                },
-    "dependencies":  {
-                         "@stackglass/core":  "1.1.0",
-                         "@stackglass/mcp":  "1.1.0"
-                     }
+  "name": "@stackglass/cli",
+  "version": "1.1.0",
+  "private": true,
+  "description": "glass / stackglass CLI â€” project observability, GlassLab, and MCP control.",
+  "license": "SEE LICENSE IN LICENSE",
+  "type": "module",
+  "engines": {
+    "node": "\u003e=22.13.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@stackglass/core": "1.1.0",
+    "@stackglass/mcp": "1.1.0"
+  }
 }

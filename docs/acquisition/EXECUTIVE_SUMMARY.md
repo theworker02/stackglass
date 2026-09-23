@@ -10,18 +10,18 @@ stackglass is proprietary Product IP associated with `theworker02/stackglass`. A
 
 ## Maturity (honest)
 
-| Claim | Posture |
-|-------|---------|
+| Claim                      | Posture                                |
+| -------------------------- | -------------------------------------- |
 | Production customers / ARR | Not claimed here â€” verify separately |
-| Filed patents | Not claimed â€” confirm in diligence |
-| Completeness vs README | README + tests are authoritative |
-| License | Proprietary; sale/license required |
+| Filed patents              | Not claimed â€” confirm in diligence   |
+| Completeness vs README     | README + tests are authoritative       |
+| License                    | Proprietary; sale/license required     |
 
 ## Buyer next step
 
-1. NDA if private materials are needed  
-2. Run `BUYER_EVALUATION.md`  
-3. Review transfer schedules  
-4. Term sheet / definitive docs with counsel  
+1. NDA if private materials are needed
+2. Run `BUYER_EVALUATION.md`
+3. Review transfer schedules
+4. Term sheet / definitive docs with counsel
 
-*Updated: 2026-09-22*
+_Updated: 2026-09-22_

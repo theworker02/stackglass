@@ -8,10 +8,10 @@ This notice is provided for users, evaluators, diligence teams, and prospective 
 
 ## Summary
 
-| Period | Terms |
-|--------|--------|
-| **Historical** public distributions that were expressly licensed under the MIT License | Those copies remain governed by the the MIT License terms that accompanied them. This notice does **not** claim those prior open-source grants are revoked, and it does **not** claim that continued use of such historical copies under their original the MIT License terms is illegal. |
-| **Current and future** code in this repository (and builds derived from it after the transition) | **Source-available proprietary** evaluation terms in [`LICENSE`](./LICENSE). Production, redistribution, SaaS, and other commercial use require a paid commercial license — see [`COMMERCIAL.md`](./COMMERCIAL.md). |
+| Period                                                                                           | Terms                                                                                                                                                                                                                                                                                     |
+| ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Historical** public distributions that were expressly licensed under the MIT License           | Those copies remain governed by the the MIT License terms that accompanied them. This notice does **not** claim those prior open-source grants are revoked, and it does **not** claim that continued use of such historical copies under their original the MIT License terms is illegal. |
+| **Current and future** code in this repository (and builds derived from it after the transition) | **Source-available proprietary** evaluation terms in [`LICENSE`](./LICENSE). Production, redistribution, SaaS, and other commercial use require a paid commercial license — see [`COMMERCIAL.md`](./COMMERCIAL.md).                                                                       |
 
 ## What changed
 
@@ -24,7 +24,7 @@ stackglass previously used the MIT License for public distribution. The project 
 
 Unauthorized **production**, **redistribution**, **SaaS/hosted**, or other **commercial** use of **post-transition** stackglass code (code distributed under the proprietary [`LICENSE`](./LICENSE), not under a separate commercial agreement) may be enforced by:
 
-1. the current copyright holder (**theworker02**), and/or  
+1. the current copyright holder (**theworker02**), and/or
 2. any **acquirer, assignee, or other successor** that obtains copyright or exclusive licensing rights in stackglass.
 
 Enforcement may include (without limitation) requiring a commercial license, seeking injunctive relief, or other remedies available under applicable law. Specific remedies depend on facts, jurisdiction, and the terms of any commercial or acquisition agreement.
