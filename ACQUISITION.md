@@ -23,14 +23,14 @@
 
 ## 2. Product snapshot
 
-| Item | Detail |
-|------|--------|
-| Product | stackglass |
-| Repo | `theworker02/stackglass` |
-| Language | TypeScript |
-| Open source? | **No** â€” proprietary |
-| Rightsholder | theworker02 |
-| Diligence pack | `docs/acquisition/` |
+| Item           | Detail                   |
+| -------------- | ------------------------ |
+| Product        | stackglass               |
+| Repo           | `theworker02/stackglass` |
+| Language       | TypeScript               |
+| Open source?   | **No** â€” proprietary   |
+| Rightsholder   | theworker02              |
+| Diligence pack | `docs/acquisition/`      |
 
 ### Capability highlights (from current materials)
 
@@ -70,7 +70,7 @@ Typical transferable surfaces:
 
 Minimal path (no secrets required unless README says otherwise):
 
-```
+````
 ```text
 Developer flight recorder
 + Testing laboratory (GlassLab)
@@ -80,10 +80,12 @@ Developer flight recorder
 + MCP server
 + Cursor agent toolkit
 + GlassLens (narrative, session, heat, clusters)
-```
+````
+
 ```text
 token.ts edited Ã¢â€ â€™ typecheck fails Ã¢â€ â€™ two auth tests fail Ã¢â€ â€™ contract drifts Ã¢â€ â€™ README example goes stale
 ```
+
 ```bash
 git clone https://github.com/theworker02/stackglass.git
 cd stackglass
@@ -91,9 +93,11 @@ npm install
 npm run build
 node cli/dist/bin.js --help
 ```
+
 ```bash
 node /path/to/stackglass/cli/dist/bin.js init
 ```
+
 ```bash
 cd your-project
 glass init
@@ -102,6 +106,7 @@ glass why
 glass test related
 glass dashboard
 ```
+
 ```bash
 glass test related
 glass test changed
@@ -121,23 +126,23 @@ Extended evaluation: `docs/acquisition/BUYER_EVALUATION.md`. Written NDA / evalu
 
 Subject to definitive schedules:
 
-| Included (typical) | Excluded (typical) |
-|--------------------|--------------------|
-| Repo materials + asserted original IP | Seller personal accounts / unrelated repos |
-| Docs + diligence room at closing | Third-party dependency source under separate licenses |
-| In-repo brand marks as assigned | Secrets without rotation plan |
-| Know-how captured in docs | Fabricated revenue, user, or adoption metrics |
+| Included (typical)                    | Excluded (typical)                                    |
+| ------------------------------------- | ----------------------------------------------------- |
+| Repo materials + asserted original IP | Seller personal accounts / unrelated repos            |
+| Docs + diligence room at closing      | Third-party dependency source under separate licenses |
+| In-repo brand marks as assigned       | Secrets without rotation plan                         |
+| Know-how captured in docs             | Fabricated revenue, user, or adoption metrics         |
 
 ---
 
 ## 7. Suggested deal structures
 
-| Structure | When it fits |
-|-----------|--------------|
-| Non-exclusive commercial license | Deploy/run under seat or environment terms |
-| Exclusive field-of-use license | Buyer wants exclusivity; seller may retain entity |
-| Asset / IP assignment | Buyer wants ownership of Materials outright |
-| OEM / redistribution | Separate agreement â€” not implied here |
+| Structure                        | When it fits                                      |
+| -------------------------------- | ------------------------------------------------- |
+| Non-exclusive commercial license | Deploy/run under seat or environment terms        |
+| Exclusive field-of-use license   | Buyer wants exclusivity; seller may retain entity |
+| Asset / IP assignment            | Buyer wants ownership of Materials outright       |
+| OEM / redistribution             | Separate agreement â€” not implied here           |
 
 Commercial terms (price, earnouts, escrow) are negotiated under NDA with counsel.
 
@@ -157,15 +162,15 @@ Commercial terms (price, earnouts, escrow) are negotiated under NDA with counsel
 
 ## 9. Related documents
 
-| Document | Purpose |
-|----------|---------|
-| `LICENSE` | Proprietary â€” no default grant |
-| `docs/acquisition/README.md` | Data-room index |
-| `docs/acquisition/EXECUTIVE_SUMMARY.md` | One-page thesis |
-| `README.md` | Product overview |
-| `SECURITY.md` | Vulnerability reporting |
-| `COMMERCIAL.md` | Licensing contact path |
-| `.github/FUNDING.yml` | Sponsors / thanks.dev |
+| Document                                | Purpose                          |
+| --------------------------------------- | -------------------------------- |
+| `LICENSE`                               | Proprietary â€” no default grant |
+| `docs/acquisition/README.md`            | Data-room index                  |
+| `docs/acquisition/EXECUTIVE_SUMMARY.md` | One-page thesis                  |
+| `README.md`                             | Product overview                 |
+| `SECURITY.md`                           | Vulnerability reporting          |
+| `COMMERCIAL.md`                         | Licensing contact path           |
+| `.github/FUNDING.yml`                   | Sponsors / thanks.dev            |
 
 ---
 
@@ -175,4 +180,4 @@ This package is informational and **does not** create a binding offer, grant of 
 
 ---
 
-*Document version: 2.0.0 / 2026-09-22 Â· Classification: acquisition briefing*
+_Document version: 2.0.0 / 2026-09-22 Â· Classification: acquisition briefing_

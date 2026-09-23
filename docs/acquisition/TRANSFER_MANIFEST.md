@@ -24,4 +24,4 @@ Definitive agreement supersedes root `LICENSE` for the buyer to the extent of co
 
 Docs-only vs time-boxed engineering help â€” negotiate separately.
 
-*Updated: 2026-09-22*
+_Updated: 2026-09-22_

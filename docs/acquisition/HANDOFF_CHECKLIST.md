@@ -25,4 +25,4 @@
 
 Seller contact: [@theworker02](https://github.com/theworker02)
 
-*Updated: 2026-09-22*
+_Updated: 2026-09-22_
